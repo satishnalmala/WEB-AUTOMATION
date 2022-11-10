@@ -22,7 +22,7 @@ public class Create_Job_Edge {
 	@BeforeTest	
 	public void setup()
 		{
-		/*
+		
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\DKI-Satish\\eclipse-workspace\\DKI\\Drivers\\ChromeDriver\\chromedriver.exe");
 			driver=new ChromeDriver();
 			
@@ -30,7 +30,7 @@ public class Create_Job_Edge {
 			driver.get("https://staging.dki.ca/Account/Login"); //url
 			driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS) ;
 			driver.manage().window().maximize();	
-			*/
+			/*
 			//---------------------------- Edge Driver----------
 			System.setProperty("webdriver.edge.driver", "C:\\Users\\DKI-Satish\\eclipse-workspace\\DKI\\Drivers\\EdgeDriver\\msedgeDriver.exe");
 			driver=new EdgeDriver();
@@ -39,6 +39,7 @@ public class Create_Job_Edge {
 			driver.get("https://staging.dki.ca/Account/Login"); //url
 			driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS) ;
 			driver.manage().window().maximize();
+			*/
 		}
 	@Test
 	public void Testcase1_CreateJob() throws InterruptedException
@@ -53,8 +54,14 @@ public class Create_Job_Edge {
 		driver.findElement(By.xpath("//input[@id='InsuredCity']")).sendKeys("Ontario");
 		driver.findElement(By.xpath("//input[@id='InsuredPostal']")).sendKeys("m1p0a9");
 		driver.findElement(By.xpath("//input[@id='EmailAddress']")).sendKeys("testing@gmail.com");
-		//0driver.findElement(By.xpath("//button[@id='AddInsuredMethod']")).click();
+		driver.findElement(By.xpath("//button[@id='AddInsuredMethod']")).click();
+		cf.myWait(3);
+		driver.findElement(By.xpath("//body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("6456789356");
 		// ---  Add contact detail ?????
+		driver.findElement(By.xpath("//div[@class='col-md-3']/select[1]")).click();
+		
+		driver.findElement(By.xpath("//div[@class='col-md-3']/select[1]//option[contains(text(),'Work')][1]")).click();
+		driver.findElement(By.xpath("//body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("1");
 		
 		driver.findElement(By.xpath("//input[@id='nextButton']")).click();
 		// wait
@@ -67,6 +74,7 @@ public class Create_Job_Edge {
 		driver.findElement(By.xpath("//input[@id='nextButton']")).click();
 		// wait
 		cf.myWait(10);
+		
 		//-------- Claim Information-----
 		driver.findElement(By.xpath("//form[@id='claimInfoForm']//div//div//div//div//button//div//div//div[contains(text(),'Nothing selected')]")).click();
 		
@@ -89,8 +97,8 @@ public class Create_Job_Edge {
 		driver.findElement(By.xpath("//input[@id='DateOfLoss']")).click();
 		driver.findElement(By.xpath("//input[@id='DateOfLoss']")).sendKeys("2022-06-05 10:47 PM");
 		
-		Select objSelect =new Select(driver.findElement(By.id("TypeOfLoss")));
-		objSelect.selectByVisibleText("COLLAPSE");
+		Select objSelect1 =new Select(driver.findElement(By.id("TypeOfLoss")));
+		objSelect1.selectByVisibleText("COLLAPSE");
 		
 		driver.findElement(By.xpath("//input[@id='CauseOfLoss']")).sendKeys("Emergency");
 			
@@ -128,7 +136,7 @@ public class Create_Job_Edge {
 @AfterTest	
 public void cleanup()
 {
-	driver.close();
+	//driver.close();
 	
 }
 }

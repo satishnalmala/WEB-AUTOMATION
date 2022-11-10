@@ -66,7 +66,16 @@ public class Create_Job {
 		driver.findElement(By.xpath("//input[@id='InsuredCity']")).sendKeys("Ontario");
 		driver.findElement(By.xpath("//input[@id='InsuredPostal']")).sendKeys("m1p0a9");
 		driver.findElement(By.xpath("//input[@id='EmailAddress']")).sendKeys("testing@gmail.com");
-		//0driver.findElement(By.xpath("//button[@id='AddInsuredMethod']")).click();
+		driver.findElement(By.xpath("//button[@id='AddInsuredMethod']")).click();
+		cf.myWait(3);
+		driver.findElement(By.xpath("//body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")).sendKeys("6456789356");
+		// ---  Add contact detail ?????
+		driver.findElement(By.xpath("//div[@class='col-md-3']/select[1]")).click();
+		
+		driver.findElement(By.xpath("//div[@class='col-md-3']/select[1]//option[contains(text(),'Work')][1]")).click();
+		driver.findElement(By.xpath("//body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]/div[3]/input[1]")).sendKeys("1");
+		
+		
 		// ---  Add contact detail ?????
 		
 		driver.findElement(By.xpath("//input[@id='nextButton']")).click();

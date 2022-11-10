@@ -53,11 +53,11 @@ public class Details_Job_Levels_Delete {
 		driver.findElement(By.xpath("//input[@id='jobSearch']")).sendKeys("220");
 		cf.myWait(2);cf.myWait(5);
 		Thread.sleep(10000);
-		driver.findElement(By.xpath("//input[@id='jobSearch']")).sendKeys("6DK");
+		driver.findElement(By.xpath("//input[@id='jobSearch']")).sendKeys("9DK");
 		cf.myWait(2);cf.myWait(5);Thread.sleep(5000);
-		driver.findElement(By.xpath("//input[@id='jobSearch']")).sendKeys("032");
+		driver.findElement(By.xpath("//input[@id='jobSearch']")).sendKeys("019");
 		cf.myWait(15);
-		driver.findElement(By.xpath("//div[contains(text(),'Test Satish - 37 kilmarnock Crescent, ontario')]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'IR test android asdf - 2360 bristol Cir 401, Oakville')]")).click();
 		Thread.sleep(2000);
 		cf.myWait(10);
 		cf.myWait(2);

@@ -58,14 +58,14 @@ public By EquipmentTab=By.xpath("//body/div/nav/div/ul/li[8]/a[1]");
 	public void searchJob() throws InterruptedException
 	{
 		CommonFunctions cf= new CommonFunctions(driver);
-		driver.findElement(By.xpath("//input[@id='jobSearch']")).sendKeys("220");
+		driver.findElement(By.xpath("//input[@id='jobSearch']")).sendKeys("221");
 		cf.myWait(2);cf.myWait(5);
 		Thread.sleep(10000);
-		driver.findElement(By.xpath("//input[@id='jobSearch']")).sendKeys("6DK");
+		driver.findElement(By.xpath("//input[@id='jobSearch']")).sendKeys("0DK");
 		cf.myWait(2);cf.myWait(5);Thread.sleep(5000);
-		driver.findElement(By.xpath("//input[@id='jobSearch']")).sendKeys("020");
+		driver.findElement(By.xpath("//input[@id='jobSearch']")).sendKeys("001");
 		cf.myWait(15);
-		driver.findElement(By.xpath("//div[contains(text(),'Test Satish - 37 kilmarnock Crescent, ontario')]")).click();
+		driver.findElement(By.xpath("//div[contains(text(),'EARTHQUAKE')]")).click();
 		Thread.sleep(2000);
 		cf.myWait(10);
 		cf.myWait(2);
